@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/tokens/base.css">
+  <link rel="stylesheet" href="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/styles.css">
+  <script src="_ds/design-system-46aa9ae8-5218-4ed6-813d-9d2a5e212830/_ds_bundle.js"></script>
+  <style>html,body{margin:0;background:#F7F6ED;overflow-x:clip}a{color:var(--primary-500)}a:hover{color:var(--primary-700)}</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;font-family:var(--font-sans);color:var(--neutral-900)">
+  <div style="position:fixed;inset:0;z-index:0;background:{{ bg }}"></div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:20;height:64px;background:var(--bg-base);border-bottom:1px solid var(--neutral-100);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,40px)">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="assets/logo.png" alt="야채온" style="width:40px;height:40px;object-fit:contain">
+      <span style="font-weight:700;font-size:16px;color:var(--primary-500)">단가 건강진단</span>
+    </div>
+    <x-import component-from-global-scope="DesignSystem_46aa9a.Button" size="sm" on-click="{{ goCta }}" hint-size="110px,38px">진단 시작하기</x-import>
+  </header>
+
+  <section ref="{{ r0 }}" data-screen-label="01 Hero" style="position:relative;z-index:1;height:240vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;padding:64px clamp(20px,5vw,80px) 0;display:grid;align-items:center;justify-items:var(--m-items,center);text-align:var(--m-align,center)">
+      <div style="grid-area:1/1;display:flex;flex-direction:column;align-items:var(--m-items,center);gap:24px;opacity:{{ hero.qO }};transform:{{ hero.qT }}">
+        <x-import component-from-global-scope="DesignSystem_46aa9a.Badge" tone="green" hint-size="200px,26px">식당 사장님을 위한 무료 서비스</x-import>
+        <h1 style="margin:0;font-weight:800;font-size:clamp(34px,6vw,84px);line-height:1.2;letter-spacing:-0.03em;color:var(--k0-ink);text-wrap:balance">사장님, 매일 받는 야채 명세서<br>시세랑 비교해 보셨어요?</h1>
+      </div>
+      <div style="grid-area:1/1;display:flex;flex-direction:column;align-items:var(--m-items,center);gap:28px;opacity:{{ hero.tO }};transform:{{ hero.tT }};transform-origin:var(--m-origin,center)">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:var(--m-items,center)">
+          <h2 style="margin:0;font-weight:800;font-size:var(--m-hero,clamp(56px,11vw,168px));line-height:1;letter-spacing:-0.045em;color:var(--k0-ink)">단가 <span style="color:var(--k0-acc)">건강진단</span></h2>
+          <x-import component-from-global-scope="DesignSystem_46aa9a.Badge" tone="butter" dc-props="{{ freeProps }}" hint-size="80px,44px">무료</x-import>
+        </div>
+        <p style="margin:0;font-size:clamp(17px,1.6vw,22px);line-height:1.6;color:var(--k0-sub);opacity:{{ hero.fO }};transform:{{ hero.fT }}">명세서로 시작하는 무료 단가 건강진단</p>
+      </div>
+      <div style="position:absolute;left:0;right:0;bottom:32px;text-align:center;font-size:14px;color:var(--k0-sub);opacity:{{ hero.hint }}">아래로 내려 보세요</div>
+    </div>
+  </section>
+
+  <section ref="{{ r1 }}" data-screen-label="02 Intro" style="position:relative;z-index:1;height:220vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;padding:64px clamp(20px,6vw,96px) 0;display:flex;align-items:center;justify-content:var(--m-items,center)">
+      <p style="margin:0;max-width:1100px;display:flex;flex-wrap:wrap;column-gap:0.28em;row-gap:0.1em;justify-content:var(--m-items,center);font-weight:800;font-size:clamp(32px,5.4vw,76px);line-height:1.25;letter-spacing:-0.035em">
+        <sc-for list="{{ words }}" as="w" hint-placeholder-count="8"><span style="color:{{ w.c }};opacity:{{ w.o }}">{{ w.t }}</span></sc-for>
+      </p>
+    </div>
+  </section>
+
+  <section ref="{{ r2 }}" data-screen-label="03 Ledger" style="position:relative;z-index:1;height:380vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;padding:88px clamp(20px,4vw,40px) 24px;display:flex;align-items:center;justify-content:center">
+      <div style="display:grid;grid-template-columns:{{ led.cols }};gap:{{ led.gap }};align-items:center;width:100%;max-width:1000px;justify-content:center">
+        <div style="position:relative;opacity:{{ led.cardO }};transform:{{ led.cardT }};justify-self:center;width:100%;max-width:400px">
+          <div style="background:var(--bg-surface);border:1px solid var(--neutral-100);border-radius:16px;padding:{{ led.pad }};display:flex;flex-direction:column;gap:{{ led.rowGap }}">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-weight:800;font-size:22px;color:var(--neutral-900)">거래명세서</span>
+              <span style="opacity:{{ led.exO }}"><x-import component-from-global-scope="DesignSystem_46aa9a.Badge" tone="neutral" hint-size="70px,24px">결과 예시</x-import></span>
+            </div>
+            <div style="border-top:1.5px dashed var(--neutral-200)"></div>
+            <div style="display:flex;justify-content:space-between;font-size:14px;color:var(--neutral-600)"><span>품목</span><span>단가</span></div>
+            <sc-for list="{{ led.rows }}" as="r" hint-placeholder-count="3">
+              <div style="display:flex;justify-content:space-between;align-items:center;min-height:{{ led.rowH }};opacity:{{ r.o }}">
+                <span style="font-size:20px;color:var(--neutral-800)">{{ r.name }}</span>
+                <div style="display:grid;justify-items:end">
+                  <span style="grid-area:1/1;align-self:center;letter-spacing:4px;color:var(--neutral-400);opacity:{{ r.dotO }}">··········</span>
+                  <div style="grid-area:1/1;display:flex;flex-direction:column;align-items:flex-end;gap:2px;opacity:{{ r.c }}">
+                    <span style="font-family:Inter,var(--font-sans);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums;color:var(--neutral-900)">{{ r.ours }}</span>
+                    <span style="font-size:13px;font-weight:600;color:{{ r.tone }};font-variant-numeric:tabular-nums">야채온 {{ r.yc }} · {{ r.diff }}</span>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+            <div style="border-top:1.5px dashed var(--neutral-200)"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;min-height:44px">
+              <span style="font-size:20px;font-weight:700;color:var(--neutral-900)">합계</span>
+              <div style="display:grid;justify-items:end">
+                <span style="grid-area:1/1;letter-spacing:4px;font-weight:700;color:var(--neutral-800);opacity:{{ led.totDotO }}">···········</span>
+                <span style="grid-area:1/1;font-family:Inter,var(--font-sans);font-weight:800;font-size:20px;color:var(--secondary-carrot);opacity:{{ led.totO }}">▼ 600</span>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;left:50%;bottom:-22px;transform:{{ led.okT }};opacity:{{ led.okO }};background:var(--primary-700);color:var(--bg-base);font-weight:700;font-size:17px;padding:12px 24px;border-radius:999px;white-space:nowrap">명세서 사진 한 장이면 OK</div>
+        </div>
+
+        <div style="display:grid;align-items:center;text-align:{{ led.align }};padding-top:{{ led.textPad }}">
+          <div style="grid-area:1/1;display:flex;flex-direction:column;gap:24px;align-items:{{ led.items }};opacity:{{ led.t1O }};transform:{{ led.t1T }}">
+            <p style="margin:0;font-weight:800;font-size:clamp(28px,3.6vw,48px);line-height:1.25;letter-spacing:-0.03em;color:var(--k2-ink)">줄일 수 있는 단가,<br>있는지 <span style="color:var(--k2-acc)">확인</span>하세요.</p>
+            <div style="width:{{ led.coin }};height:{{ led.coin }};border-radius:50%;background:var(--primary-100);border:2px solid var(--primary-700);display:flex;align-items:center;justify-content:center;position:relative;transform:{{ led.coinT }}">
+              <span style="font-family:Inter,var(--font-sans);font-weight:800;font-size:56px;color:var(--primary-700)">₩</span>
+              <span style="position:absolute;top:-6px;right:-6px;width:40px;height:40px;border-radius:50%;background:var(--primary-700);color:var(--bg-base);font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center">?</span>
+            </div>
+          </div>
+          <div style="grid-area:1/1;display:flex;flex-direction:column;gap:16px;opacity:{{ led.t2O }};transform:{{ led.t2T }}">
+            <p style="margin:0;font-weight:800;font-size:clamp(26px,3.2vw,42px);line-height:1.3;letter-spacing:-0.03em;color:var(--k2-ink)">도매시장 흐름이 오른 건지,<br>우리 가게만 더 오른 건지도 <span style="color:var(--k2-acc)">한눈에</span>.</p>
+            <p style="margin:0;font-size:18px;line-height:1.6;color:var(--k2-sub)">품목별로 비교해 한눈에 보여드려요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section ref="{{ r3 }}" data-screen-label="04 Steps" style="position:relative;z-index:1;height:260vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;padding:96px clamp(20px,4vw,40px) 40px;display:flex;flex-direction:column;justify-content:center;align-items:center">
+      <div style="width:100%;max-width:1200px;display:flex;flex-direction:column;gap:clamp(32px,6vh,64px)">
+        <h3 style="margin:0;font-weight:800;font-size:clamp(30px,4.4vw,60px);letter-spacing:-0.03em;line-height:1.2;color:var(--k3-ink);text-align:var(--m-align,center)">세 단계면 끝나요</h3>
+        <div style="height:2px;background:var(--k3-line);position:relative">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:{{ steps.line }};background:var(--k3-acc)"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(20px,3vw,40px)">
+          <sc-for list="{{ steps.items }}" as="s" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:10px;opacity:{{ s.o }};transform:{{ s.t }}">
+              <span style="font-family:Inter,var(--font-sans);font-weight:800;font-size:clamp(44px,6vw,88px);line-height:1;letter-spacing:-0.04em;color:var(--k3-acc);font-variant-numeric:tabular-nums">{{ s.n }}</span>
+              <span style="font-weight:700;font-size:clamp(20px,2vw,26px);color:var(--k3-ink)">{{ s.title }}</span>
+              <span style="font-size:17px;line-height:1.6;color:var(--k3-sub)">{{ s.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section ref="{{ r4 }}" data-screen-label="05 Safe" style="position:relative;z-index:1;min-height:110vh;box-sizing:border-box;padding:120px clamp(20px,6vw,96px);display:flex;flex-direction:column;justify-content:center;align-items:var(--m-items,center);text-align:var(--m-align,center);gap:32px">
+    <span style="display:inline-flex;padding:8px 20px;border-radius:999px;background:var(--primary-50);color:var(--primary-700);font-weight:700;font-size:18px;opacity:{{ safe.b }}">안심</span>
+    <p style="margin:0;font-weight:800;font-size:clamp(28px,4.6vw,64px);line-height:1.25;letter-spacing:-0.03em;color:var(--k4-ink);opacity:{{ safe.o1 }};transform:{{ safe.t1 }}">사진은 진단에만 사용 · 30일 후 삭제</p>
+    <p style="margin:0;font-weight:800;font-size:clamp(28px,4.6vw,64px);line-height:1.25;letter-spacing:-0.03em;color:var(--k4-sub);opacity:{{ safe.o2 }};transform:{{ safe.t2 }}">다른 업체 이름은 결과에 표시하지 않음</p>
+  </section>
+
+  <section ref="{{ rP }}" data-screen-label="06 Promise" style="position:relative;z-index:1;min-height:110vh;box-sizing:border-box;padding:120px clamp(20px,4vw,40px);display:flex;flex-direction:column;justify-content:center;align-items:center">
+    <div style="width:100%;max-width:1200px;display:flex;flex-direction:column;gap:clamp(32px,5vh,56px)">
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:var(--m-items,center);text-align:var(--m-align,center);opacity:{{ promHead }}">
+        <span style="font-size:16px;font-weight:600;color:var(--k5-sub)">부산 야채의 중심 야채온</span>
+        <h3 style="margin:0;font-weight:800;font-size:clamp(30px,4.4vw,60px);letter-spacing:-0.03em;line-height:1.2;color:var(--k5-ink)">야채온의 <span style="color:var(--k5-acc)">약속</span></h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <sc-for list="{{ promises }}" as="x" hint-placeholder-count="3">
+          <div style="background:var(--bg-surface);border:1px solid var(--neutral-100);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;opacity:{{ x.o }};transform:{{ x.t }}">
+            <x-import component-from-global-scope="DesignSystem_46aa9a.Badge" tone="green" hint-size="80px,24px">{{ x.k }}</x-import>
+            <span style="font-weight:800;font-size:clamp(22px,2.2vw,28px);letter-spacing:-0.02em;color:var(--primary-700)">{{ x.title }}</span>
+            <span style="font-size:17px;line-height:1.6;color:var(--neutral-800)">{{ x.desc }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section ref="{{ r5 }}" data-screen-label="07 CTA" style="position:relative;z-index:1;height:200vh">
+    <div style="position:sticky;top:0;height:100vh;box-sizing:border-box;padding-top:64px;display:flex;align-items:center;justify-content:center">
+      <div style="width:{{ cta.w }};max-width:{{ cta.maxW }};height:{{ cta.h }};border-radius:{{ cta.r }};background:var(--bg-inverse);display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:clamp(28px,5vw,80px);overflow:hidden">
+        <div style="width:100%;max-width:1100px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;opacity:{{ cta.o }};transform:{{ cta.t }}">
+          <div style="display:flex;flex-direction:column;gap:20px;flex:1 1 420px">
+            <h3 style="margin:0;font-weight:800;font-size:clamp(34px,5vw,72px);line-height:1.1;letter-spacing:-0.035em;color:var(--bg-base)">무료 단가 건강진단 →</h3>
+            <p style="margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.6;color:var(--primary-100)">진단은 무료, 결과 보고 판단은 사장님이.<br>지금 진단해 보세요.</p>
+            <a href="https://order.yachaeon.co.kr/check" target="_blank" style="font-family:Inter,var(--font-sans);font-weight:700;font-size:clamp(20px,2vw,28px);color:var(--secondary-butter);text-decoration:none">order.yachaeon.co.kr/check</a>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <x-import component-from-global-scope="DesignSystem_46aa9a.Button" variant="inverse" on-click="{{ openCheck }}" hint-size="150px,44px">지금 진단하기</x-import>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="07 Footer" style="position:relative;z-index:1;background:var(--bg-base);border-top:1px solid var(--neutral-100);padding:64px clamp(20px,4vw,40px) 48px;display:flex;flex-direction:column;align-items:center;gap:40px">
+    <p style="margin:0;font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--primary-700);text-align:center">사장님, 오늘도 장사 잘됩시다! ♡</p>
+    <div style="width:100%;max-width:1200px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;border-top:1px solid var(--neutral-100);padding-top:32px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <img src="assets/logo.png" alt="야채온" style="width:56px;height:56px;object-fit:contain">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;color:var(--neutral-800)">상담문의 <strong style="font-family:Inter,var(--font-sans)">010-2820-0050</strong></span>
+          <span style="font-size:14px;color:var(--neutral-600)">부산광역시 해운대구 수영강변대로 626, 반여농산물도매시장 중앙청과 112번</span>
+        </div>
+      </div>
+      <span style="font-size:14px;font-weight:600;color:var(--primary-500)">당일 경매의 신선함을 그대로 야채ON</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A · 정겨운 상인&quot;,&quot;B · 데이터·숫자&quot;,&quot;C · 감성 그린&quot;],&quot;default&quot;:&quot;A · 정겨운 상인&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;시스템 준수&quot;,&quot;역동적&quot;],&quot;default&quot;:&quot;시스템 준수&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showExample&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const PAL = {
+  A: { align: 'center', items: 'center', origin: 'center', size: 'clamp(56px,11vw,168px)', s: [
+    ['#F7F6ED','#1F201C','#6B6A60','#126540'],
+    ['#FDF0E6','#1F201C','#6B6A60','#A84F14'],
+    ['#F7F6ED','#1F201C','#6B6A60','#126540'],
+    ['#EAF3EE','#0B4A2E','#3A3A34','#126540','#CFE5D8'],
+    ['#F7F6ED','#1F201C','#126540','#126540'],
+    ['#126540','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#F7F6ED','#126540','#6B6A60','#126540']] },
+  B: { align: 'left', items: 'flex-start', origin: 'left center', size: 'clamp(64px,13vw,200px)', s: [
+    ['#FFFFFF','#06301D','#6B6A60','#126540'],
+    ['#F7F6ED','#06301D','#6B6A60','#E3772F'],
+    ['#FFFFFF','#1F201C','#6B6A60','#E3772F'],
+    ['#F7F6ED','#06301D','#3A3A34','#126540','#D9D6C8'],
+    ['#FFFFFF','#06301D','#6B6A60','#126540'],
+    ['#F7F6ED','#06301D','#6B6A60','#126540'],
+    ['#FFFFFF','#126540','#6B6A60','#126540']] },
+  C: { align: 'center', items: 'center', origin: 'center', size: 'clamp(56px,11vw,168px)', s: [
+    ['#06301D','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#0B4A2E','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#06301D','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#126540','#F7F6ED','#CFE5D8','#F2C94C','#0B4A2E'],
+    ['#0B4A2E','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#06301D','#F7F6ED','#CFE5D8','#F2C94C'],
+    ['#06301D','#F7F6ED','#CFE5D8','#F2C94C']] }
+};
+const PROMISES = [
+  { k: '신선함', title: '새벽 경매, 당일 납품', desc: '새벽에 직접 경매받은 물건을 그날 납품해 드려요.' },
+  { k: '정직한 시세', title: '중간 유통 없이', desc: '반여농산물도매시장 중앙청과 112번에서 당일 시세 그대로 드려요.' },
+  { k: '든든한 동반자', title: '100% 교환·환불', desc: '받아보시고 아니다 싶으면 100% 교환·환불해 드려요.' }
+];
+const INTRO = '바쁜 장사에 일일이 따져볼 시간이 없으시죠. 그래서 야채온이 만들었습니다.'.split(' ');
+const ROWS = [
+  { name: '양파', ours: '1,900원', yc: '1,600', diff: '▼ 300', down: true },
+  { name: '대파', ours: '2,800원', yc: '2,800', diff: '시세 흐름', down: false },
+  { name: '감자', ours: '2,400원', yc: '2,100', diff: '▼ 300', down: true }
+];
+const STEPS = [
+  { n: '01', title: '명세서 사진 한 장', desc: '지금 거래처 명세서를 찍고' },
+  { n: '02', title: '날짜 선택', desc: '명세서 날짜를 고르면' },
+  { n: '03', title: '품목별 비교', desc: '같은 날 야채온 단가와 비교' }
+];
+const cl = v => Math.max(0, Math.min(1, v));
+const seg = (x, a, b) => cl((x - a) / (b - a));
+const E = t => 1 - Math.pow(1 - t, 3);
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, f) => { const A = hex(a), B = hex(b); return 'rgb(' + A.map((v, i) => Math.round(v + (B[i] - v) * f)).join(',') + ')'; };
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.rootRef = React.createRef();
+    this.refs6 = [0, 1, 2, 3, 4, 5, 6].map(() => React.createRef());
+    this.state = { p: [0, 0, 0, 0, 0, 0, 0], bg: null, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = null; this.measure(); }); };
+  }
+  mk() { return (this.props.mood ?? 'A')[0] in PAL ? (this.props.mood ?? 'A')[0] : 'A'; }
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.applyVars(); this.measure();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+  componentDidUpdate(pp) { if (pp.mood !== this.props.mood) { this.applyVars(); this.measure(); } }
+  applyVars() {
+    const el = this.rootRef.current; if (!el) return;
+    const P = PAL[this.mk()];
+    P.s.forEach((c, i) => {
+      el.style.setProperty('--k' + i + '-ink', c[1]);
+      el.style.setProperty('--k' + i + '-sub', c[2]);
+      el.style.setProperty('--k' + i + '-acc', c[3]);
+      if (c[4]) el.style.setProperty('--k' + i + '-line', c[4]);
+    });
+    el.style.setProperty('--m-align', P.align);
+    el.style.setProperty('--m-items', P.items);
+    el.style.setProperty('--m-origin', P.origin);
+    el.style.setProperty('--m-hero', P.size);
+  }
+  measure() {
+    const vh = window.innerHeight, S = PAL[this.mk()].s;
+    const rects = this.refs6.map(r => r.current ? r.current.getBoundingClientRect() : null);
+    if (rects.some(r => !r)) return;
+    const p = rects.map((r, i) => (i === 4 || i === 5) ? cl((vh - r.top) / (vh * 0.9)) : cl(-r.top / Math.max(1, r.height - vh)));
+    let i = 0; rects.forEach((r, k) => { if (r.top <= vh * 0.5) i = k; });
+    const L = rects.length - 1;
+    const bg = i < L ? mix(S[i][0], S[i + 1][0], cl((vh - rects[i + 1].top) / (vh * 0.5))) : mix(S[L][0], S[L][0], 0);
+    this.setState({ p, bg, w: window.innerWidth });
+  }
+  renderVals() {
+    const [p0, p1, p2, p3, p4, pp, p5] = this.state.p;
+    const mf = (this.props.motion ?? '시스템 준수') === '역동적' ? 1 : 0;
+    const showEx = this.props.showExample ?? true;
+    const wide = this.state.w >= 860;
+    const S = PAL[this.mk()].s;
+    const q1 = E(seg(p0, 0.04, 0.4)), q2 = E(seg(p0, 0.32, 0.68)), q3 = E(seg(p0, 0.6, 0.85));
+    const hero = {
+      qO: 1 - q1, qT: `translateY(${-q1 * 80 * mf}px) scale(${1 - 0.15 * q1 * mf})`,
+      tO: q2, tT: `scale(${1 + (1 - q2) * 0.7 * mf})`,
+      fO: q3, fT: `translateY(${(1 - q3) * 24 * mf}px)`, hint: 1 - seg(p0, 0, 0.08)
+    };
+    const n = INTRO.length;
+    const words = INTRO.map((t, i) => ({
+      t, c: t === '야채온이' ? `var(--k1-acc)` : `var(--k1-ink)`,
+      o: 0.16 + 0.84 * seg(p1, 0.05 + (i / n) * 0.7, 0.2 + (i / n) * 0.7)
+    }));
+    const a = E(seg(p2, 0, 0.14)), sh = E(seg(p2, 0.28, 0.42)), ok = E(seg(p2, 0.17, 0.25));
+    const t1in = E(seg(p2, 0.36, 0.46)), t1out = seg(p2, 0.6, 0.67), t2 = E(seg(p2, 0.66, 0.76));
+    const rows = ROWS.map((r, i) => {
+      const c = showEx ? seg(p2, 0.7 + i * 0.06, 0.78 + i * 0.06) : 0;
+      return { ...r, o: seg(p2, 0.05 + i * 0.05, 0.13 + i * 0.05), c, dotO: 1 - c, tone: r.down ? 'var(--secondary-carrot-700)' : 'var(--neutral-600)' };
+    });
+    const tot = showEx ? seg(p2, 0.88, 0.95) : 0;
+    const off = wide ? 252 : 0;
+    const led = {
+      cols: wide ? '400px 440px' : 'minmax(0,1fr)', gap: wide ? '64px' : '28px',
+      pad: wide ? '32px' : '22px', rowGap: wide ? '16px' : '10px', rowH: wide ? '52px' : '40px',
+      cardO: a, cardT: `translate(${(1 - sh) * off}px, ${(1 - a) * 100 * mf}px)`,
+      okO: ok, okT: `translateX(-50%) scale(${0.85 + 0.15 * ok})`,
+      exO: rows[0].c, rows, totO: tot, totDotO: 1 - tot,
+      align: wide ? 'left' : 'center', items: wide ? 'flex-start' : 'center', textPad: wide ? '0' : '16px',
+      t1O: t1in * (1 - t1out), t1T: `translateY(${((1 - t1in) * 40 - t1out * 30) * mf}px)`,
+      coin: wide ? '120px' : '84px', coinT: `scale(${0.6 + 0.4 * t1in})`,
+      t2O: t2, t2T: `translateY(${(1 - t2) * 40 * mf}px)`
+    };
+    const steps = {
+      line: (seg(p3, 0.05, 0.85) * 100) + '%',
+      items: STEPS.map((s, i) => { const v = E(seg(p3, 0.08 + i * 0.25, 0.26 + i * 0.25)); return { ...s, o: 0.2 + 0.8 * v, t: `translateY(${(1 - v) * 40 * mf}px)` }; })
+    };
+    const l1 = E(seg(p4, 0.15, 0.55)), l2 = E(seg(p4, 0.35, 0.75));
+    const safe = { b: E(seg(p4, 0.05, 0.4)), o1: l1, t1: `translateY(${(1 - l1) * 50 * mf}px)`, o2: l2, t2: `translateY(${(1 - l2) * 50 * mf}px)` };
+    const promises = PROMISES.map((x, i) => { const v = E(seg(pp, 0.2 + i * 0.12, 0.5 + i * 0.12)); return { ...x, o: v, t: `translateY(${(1 - v) * 40 * mf}px)` }; });
+    const promHead = E(seg(pp, 0.05, 0.35));
+    const c = E(seg(p5, 0, 0.55)), co = E(seg(p5, 0.3, 0.65));
+    const cta = {
+      w: `calc(100% - ${(1 - c) * (wide ? 160 : 40) * mf + (1 - mf) * (wide ? 80 : 40)}px)`, maxW: '100%',
+      h: `calc(${0.74 + 0.26 * c} * (100vh - 64px))`, r: `${28 * (1 - c * mf)}px`,
+      o: co, t: `translateY(${(1 - co) * 40 * mf}px)`
+    };
+    return {
+      rootRef: this.rootRef, r0: this.refs6[0], r1: this.refs6[1], r2: this.refs6[2], r3: this.refs6[3], r4: this.refs6[4], r5: this.refs6[6], rP: this.refs6[5],
+      bg: this.state.bg || S[0][0], hero, words, led, steps, safe, cta, promises, promHead,
+      freeProps: { style: { fontSize: 'clamp(20px,2.6vw,34px)', padding: '10px 22px', fontWeight: 800 } },
+      goCta: () => { const el = this.refs6[6].current; if (el) window.scrollTo({ top: el.offsetTop + el.offsetHeight - window.innerHeight, behavior: 'smooth' }); },
+      openCheck: () => window.open('https://order.yachaeon.co.kr/check', '_blank')
+    };
+  }
+}
+</script>
+</body>
+</html>

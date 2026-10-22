@@ -1,0 +1,21 @@
+:root{
+/* Primary — 야채온 그린 */
+--primary-50:#EAF3EE;--primary-100:#CFE5D8;--primary-300:#6FAE8B;--primary-500:#126540;--primary-700:#0B4A2E;--primary-900:#06301D;
+/* Secondary */
+--secondary-carrot:#E3772F;--secondary-carrot-50:#FDF0E6;--secondary-carrot-700:#A84F14;
+--secondary-butter:#F2C94C;--secondary-butter-ink:#5A4300;
+/* Background */
+--bg-base:#F7F6ED;--bg-surface:#FFFFFF;--bg-inverse:#126540;
+/* Neutral — 웜 그레이 */
+--neutral-0:#FFFFFF;--neutral-100:#EDEBE0;--neutral-200:#D9D6C8;--neutral-400:#A3A091;--neutral-600:#6B6A60;--neutral-800:#3A3A34;--neutral-900:#1F201C;
+/* Semantic */
+--success:#1F8A4C;--success-bg:#E5F4EA;--warning:#E0A100;--warning-bg:#FDF4D9;--error:#D64545;--error-bg:#FBE9E9;--info:#2F6FB5;--info-bg:#E6EFF9;
+
+/* Semantic aliases */
+--text-title:var(--neutral-900);--text-body:var(--neutral-800);--text-muted:var(--neutral-600);--text-disabled:var(--neutral-400);
+--text-brand:var(--primary-500);--text-on-inverse:var(--bg-base);--text-on-inverse-muted:var(--primary-100);
+--text-price-down:var(--secondary-carrot);
+--surface-page:var(--bg-base);--surface-card:var(--bg-surface);--surface-inverse:var(--bg-inverse);
+--border-card:var(--neutral-100);--border-input:var(--neutral-200);--border-focus:var(--primary-500);--ring-focus:var(--primary-100);
+--icon-color:var(--primary-500);
+}
